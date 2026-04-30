@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         image2Container.classList.remove('hidden');
         viewImageButton.classList.add('hidden');
         logoImage.classList.add('hidden'); // Hide logo image initially
+        localStorage.setItem('hasSeenImages', 'true'); // Set flag immediately
 
         // Step 1: Show both images for 5 seconds
         setTimeout(() => {
@@ -25,9 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
             image2Container.classList.add('hidden'); // Hide Image 2
             viewImageButton.classList.remove('hidden'); // Show View Image Button
             logoImage.classList.remove('hidden'); // Show logo image
-
-            // Set flag in localStorage so images don't show again on refresh
-            localStorage.setItem('hasSeenImages', 'true');
         }, 5000); // Both images visible for 5 seconds
     }
 });
